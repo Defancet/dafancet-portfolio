@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
     <link rel="stylesheet" href="css/style.css">
@@ -47,11 +46,11 @@
 <section id="about">
     <div class="about-content">
         <div class="right">
-            <img src="../images/me.jpg" alt="Maksim Kalutski">
+            <img src="images/me.jpg" alt="Maksim Kalutski">
         </div>
         <div class="left">
             <h1>Software Developer.</h1>
-            <p> Hi, I'm Maksim Kalutski. A full-stack developer based in Brno, Czech Republic. </p>
+            <p> Hi, I'm Maksim Kalutski. A software developer and CS student based in Brno, Czech Republic. </p>
 
             <h2>
                 <a href="#projects">
@@ -79,53 +78,71 @@
 
 <section id="skills">
     <div class="skills-content">
-        <h2>Skills</h2>
+        <h2>My Skills.</h2>
         <div class="skills-container">
-            <div class="skill">
-                <h3>HTML</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 90%;"></div>
+            <div class="skills-left">
+                <div class="programming-languages">
+                    <h3>Programming Languages</h3>
+                    <div class="programming-languages-left">
+                        <i class="fa fa-python"></i> <span>Python</span>
+                        <i class="fa fa-php"></i> <span>PHP</span>
+                        <i class="fa fa-cuttlefish"></i> <span>C</span>
+                        <i class="fa fa-cuttlefish"></i> <span>C++</span>
+                    </div>
+                    <div class="programming-languages-right">
+                        <i class="fa fa-cuttlefish"></i> <span>C#</span>
+                        <i class="fa fa-laptop-code"></i> <span>Prolog</span>
+                        <i class="fa fa-microchip"></i> <span>VHDL</span>
+                        <i class="fa fa-microchip"></i> <span>Assembly</span>
+                        <i class="fa fa-code"></i> <span>Shell</span>
+                    </div>
+                </div>
+                <div class="web-development">
+                    <h3>Web Development Technologies</h3>
+                    <div class="web-development-left">
+                        <i class="fa fa-html5"></i> <span>HTML5</span>
+                        <i class="fa fa-css3-alt"></i> <span>CSS3</span>
+                        <i class="fa fa-js-square"></i> <span>JavaScript</span>
+                    </div>
+                    <div class="web-development-right">
+                        <i class="fa fa-node"></i> <span>Node.js</span>
+                        <i class="fa fa-vuejs"></i> <span>Vue.js</span>
+                        <i class="fa fa-bootstrap"></i> <span>Bootstrap</span>
+                    </div>
                 </div>
             </div>
-            <div class="skill">
-                <h3>CSS</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 80%;"></div>
+            <div class="skills-right">
+                <div class="database">
+                    <h3>Database Technologies</h3>
+                    <i class="fas fa-database"></i> <span>SQLite</span>
+                    <i class="fas fa-database"></i> <span>MySQL</span>
+                    <i class="fas fa-database"></i> <span>Oracle</span>
+                    <i class="fas fa-server"></i> <span>Prisma</span>
                 </div>
-            </div>
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>PHP</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 60%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>React</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 50%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>Node.js</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 40%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>MongoDB</h3>
-                <div class="skill-bar">
-                    <div class="skill-bar-fill" style="width: 30%;"></div>
+                <div class="development">
+                    <h3>IDEs / Development Tools</h3>
+                    <div class="development-left">
+                        <i class="fas fa-laptop-code"></i> <span>JetBrains IDEs</span>
+                        <i class="fab fa-visual-studio"></i> <span>Visual Studio</span>
+                        <i class="fab fa-visual-studio-code"></i> <span>VS Code</span>
+                        <i class="fab fa-github"></i> <span>GitHub</span>
+                        <i class="fab fa-gitlab"></i> <span>GitLab</span>
+                        <i class="fab fa-azure"></i> <span>Azure DevOps</span>
+                    </div>
+                    <div class="development-right">
+                        <i class="fab fa-docker"></i> <span>Docker</span>
+                        <i class="fab fa-markdown"></i> <span>Markdown</span>
+                        <i class="fas fa-code"></i> <span>LaTeX</span>
+                        <i class="fab fa-figma"></i> <span>Figma</span>
+                        <i class="fab fa-qt"></i> <span>Qt</span>
+                        <i class="fab fa-adobe"></i> <span>Adobe Photoshop</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <section id="projects">
     <div class="projects-content">
@@ -154,6 +171,12 @@
         </div>
     </div>
 </section>
+
+<button id="scroll-up" aria-label="Scroll to top" style="display: none;">
+    <img width="50" height="50" src="https://img.icons8.com/ios/50/long-arrow-up--v1.png" alt="long-arrow-up--v1"/>
+    <span>Scroll to top</span>
+</button>
+
 <footer>
     <div class="footer-container">
         <p>&copy; 2021 Maksim Kalutski</p>
