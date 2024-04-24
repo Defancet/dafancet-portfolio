@@ -26,9 +26,6 @@
     list-style: none;
 }
 
-body {
-    min-height: 100vh;
-}
 
 html {
     scroll-behavior: smooth;
@@ -93,8 +90,8 @@ header {
     overflow: hidden;
     display: block;
     color: white;
-    font-size: 2em;
-    padding: 10px 10px;
+    font-size: 1.5em;
+    padding: 5px 5px;
     margin: 15px;
     transition: color 0.5s, background-color 0.5s;
 }
@@ -102,8 +99,8 @@ header {
 .nav-container .nav-bar ul li a::after {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     bottom: 0;
     left: calc(50% - 5px);
     background-color: white;
@@ -453,16 +450,16 @@ header .name h1:hover {
 }
 
 #projects .container {
-    height: 500px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-    padding-top: 40px;
-    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 40px 0 60px;
 }
 
 #projects .card {
-    width: 80px;
+    width: 600px;
+    height: 400px;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
@@ -470,7 +467,6 @@ header .name h1:hover {
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
 }
 
 #projects .card > .row {
@@ -498,8 +494,7 @@ header .name h1:hover {
     overflow: hidden;
     height: 80px;
     width: 520px;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
     transition-delay: .3s;
     transition: all .3s ease;
 }
@@ -521,28 +516,6 @@ header .name h1:hover {
 
 #projects input {
     display: none;
-}
-
-#projects input:checked + label {
-    width: 600px;
-}
-
-#projects input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-#projects .card[for="pr1"] {
-    background-image: url('../images/project1.png');
-}
-#projects .card[for="pr2"] {
-    background-image: url('../images/project2.png');
-}
-#projects .card[for="pr3"] {
-    background-image: url('../images/project3.jpg');
-}
-#projects .card[for="pr4"] {
-    background-image: url('../images/project4.png');
 }
 
 #projects .all-projects h2 {
@@ -622,7 +595,7 @@ footer {
     position: fixed;
     bottom: 50px;
     right: 30px;
-    color: black;
+    color: #363636;
     background: transparent;
     border: none;
     outline: none;
@@ -631,12 +604,14 @@ footer {
     flex-direction: column;
     align-items: center;
     transition: 0.3s ease-in-out;
+    z-index: 999;
 }
 
 #scroll-up img {
-    width: 30px;
-    height: 50px;
+    width: 25px;
+    height: 40px;
     margin-bottom: 5px;
+    filter: brightness(22%) contrast(50%);
 }
 
 #scroll-up span {
