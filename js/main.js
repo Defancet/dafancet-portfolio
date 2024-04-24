@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.nav-container');
     const navContainer = document.querySelector('header');
+    const scrollUp = document.getElementById('scroll-up');
     const scrollThreshold = 50;
     const hamburgerButton = document.querySelector('.hamburger-button');
     const navBar = document.querySelector('.nav-bar');
@@ -14,10 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.add('scrolled');
             navContainer.classList.add('scrolled');
             hamburgerButton.classList.add('scrolled');
+            scrollUp.style.display = 'flex';
+
         } else {
             navbar.classList.remove('scrolled');
             navContainer.classList.remove('scrolled');
             hamburgerButton.classList.remove('scrolled');
+            scrollUp.style.display = 'none';
+
         }
         updateActiveNavItem();
     }
@@ -54,6 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    scrollUp.addEventListener('click', scrollToTop);
+    
     window.addEventListener('scroll', checkScroll);
     hamburgerButton.addEventListener('click', toggleMenu);
 
