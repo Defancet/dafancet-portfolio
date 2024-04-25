@@ -266,7 +266,6 @@ header .name h1:hover {
 
 #about .about-content {
     display: flex;
-    width: 80%;
     max-width: 1200px;
     align-items: center;
 }
@@ -279,6 +278,7 @@ header .name h1:hover {
 #about .right img {
     width: 500px;
     height: auto;
+    padding-bottom: 50px;
 }
 
 #about .left {
@@ -367,11 +367,14 @@ header .name h1:hover {
 }
 
 #skills .skills-content {
-    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-#skills .skills-content p {
-    font-family: "Visuelt Pro Regular" ,sans-serif;
+#skills .skills-content p, .skills-content p, .skills-container span {
+    font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.1rem;
     color: #474747;
 }
@@ -386,40 +389,29 @@ header .name h1:hover {
     font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.2rem;
     margin-top: 20px;
-
-}
-
-#skills .skills-container span {
-    font-family: "Visuelt Pro Regular", sans-serif;
-    font-size: 1.1rem;
-    color: #474747;
 }
 
 #skills .skills-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-top: 20px;
 }
 
 #skills .skills-left, .skills-right {
     width: 100%;
+    padding-left: 10px;
 }
-
-#skills .skills-left {
-    padding-right: 100px;
-}
-
 
 #skills .programming-languages, .web-development, .development, .database {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-top: 20px;
+    gap: 30px;
 }
 
 #skills .programming-languages-left, .web-development-left, .web-development-right, .programming-languages-right, .database, .development-left, .development-right {
     display: grid;
     grid-gap: 10px;
-    padding-right: 50px;
 }
 
 /* projects */
@@ -636,9 +628,20 @@ footer {
 
 
 @media only screen and (max-width: 575px) {
-    /* projects */
-    #projects {
+    #about .right img {
+        width: 500px;
+    }
+
+    #about, #skills, #projects {
         padding: 50px;
+    }
+
+    #skills .skills-container {
+        display: block;
+    }
+
+    #about .about-content{
+        display: block;
     }
 
     #projects .container {
@@ -681,12 +684,29 @@ footer {
         display: block;
         text-align: center;
         transition: 0.5s;
+    }
+
+    #scroll-up {
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .footer-content {
+        display: grid;
+    }
+
+    .footer-content p {
+        font-size: 0.9em;
     }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    #projects {
+    #about, #skills, #projects {
         padding: 50px;
+    }
+
+    #about .right img {
+        width: 400px;
     }
 
     #projects .container {
@@ -730,9 +750,18 @@ footer {
         text-align: center;
         transition: 0.5s;
     }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    #about, #skills, #projects {
+        padding: 50px;
+    }
+
+    #about .right img {
+        width: 300px;
+    }
+
     .about-content {
         flex-direction: column;
     }
@@ -744,9 +773,5 @@ footer {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-@media only screen and (min-width: 1200px) {
 
 }
