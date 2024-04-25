@@ -266,6 +266,7 @@ header .name h1:hover {
 }
 
 #about .about-content {
+    position: relative;
     display: flex;
     max-width: 1200px;
     align-items: center;
@@ -327,7 +328,9 @@ header .name h1:hover {
 }
 
 #about .social-links {
-    margin-top: 10em;
+    position: absolute;
+    bottom: 50px;
+    padding: 10px;
 }
 
 #about .social-links a {
