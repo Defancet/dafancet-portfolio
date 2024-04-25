@@ -24,6 +24,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    overflow-x: hidden;
 }
 
 
@@ -273,6 +274,7 @@ header .name h1:hover {
 #about .right {
     order: 2;
     padding-left: 20px;
+    width: 50%;
 }
 
 #about .right img {
@@ -285,6 +287,7 @@ header .name h1:hover {
     order: 1;
     flex-grow: 1;
     padding-right: 20px;
+    width: 50%;
 }
 
 #about .left h1 {
@@ -457,15 +460,15 @@ header .name h1:hover {
 #projects .card {
     width: 100%;
     max-width: 600px;
-    min-width: 400px;
+    min-width: 250px;
     height: 400px;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    transition:  0.3s ease-in-out;
     background-position: center;
+    transition: 0.3s ease-in-out;
 }
 
 #projects .row {
@@ -628,12 +631,41 @@ footer {
 
 
 @media only screen and (max-width: 575px) {
-    #about .right img {
-        width: 500px;
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    #projects .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #projects .description {
+        padding: 10px;
     }
 
     #about, #skills, #projects {
-        padding: 50px;
+        padding: 20px;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .right, #about .left {
+        order: 0;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    #about .right img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #about .left h1, #about .left p, #about .left h2 {
+        font-size: calc(100% + 1vw);
     }
 
     #skills .skills-container {
@@ -701,13 +733,43 @@ footer {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    #projects .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #projects .description {
+        padding: 10px;
+    }
+
     #about, #skills, #projects {
-        padding: 50px;
+        padding: 20px;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .right, #about .left {
+        order: 0;
+        padding: 10px 0;
+        width: 100%;
     }
 
     #about .right img {
-        width: 400px;
+        max-width: 100%;
+        height: auto;
     }
+
+    #about .left h1, #about .left p, #about .left h2 {
+        font-size: calc(100% + 1vw);
+    }
+
 
     #projects .container {
         display: grid;
@@ -754,16 +816,23 @@ footer {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    header, section {
+        padding: 20px;
+    }
+
     #about, #skills, #projects {
         padding: 50px;
     }
 
-    #about .right img {
-        width: 300px;
-    }
-
-    .about-content {
-        flex-direction: column;
+    #about .left h1, #about .left p, #about .left h2 {
+        font-size: calc(100% + 1vw);
     }
 
     .left, .right {
@@ -772,6 +841,3 @@ footer {
     }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-}

@@ -59,6 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    document.querySelector('.hamburger-button').addEventListener('click', function() {
+        document.querySelector('.nav-bar').classList.toggle('active');
+    });
+
+// Close the nav when a link is clicked
+    document.querySelectorAll('.nav-bar a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-bar').classList.remove('active');
+        });
+    });
+
     function scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
