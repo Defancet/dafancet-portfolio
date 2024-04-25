@@ -295,7 +295,7 @@ header .name h1:hover {
 }
 
 #about .left p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.3em;
     color: #363636;
     margin-bottom: 2em;
@@ -371,7 +371,7 @@ header .name h1:hover {
 }
 
 #skills .skills-content p {
-    font-family: "Roboto" ,sans-serif;
+    font-family: "Visuelt Pro Regular" ,sans-serif;
     font-size: 1.1rem;
     color: #474747;
 }
@@ -390,7 +390,7 @@ header .name h1:hover {
 }
 
 #skills .skills-container span {
-    font-family: "Roboto", sans-serif;
+    font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.1rem;
     color: #474747;
 }
@@ -423,6 +423,13 @@ header .name h1:hover {
 }
 
 /* projects */
+#projects {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
 
 #projects .wrapper {
     width: 100%;
@@ -430,21 +437,20 @@ header .name h1:hover {
     display: grid;
     align-items: center;
     justify-content: center;
-    padding: 100px;
 }
 
 #projects .head {
     margin-left: 1.5em;
 }
 
-#projects .head h2 {
+#projects h2 {
     font-family: "Visuelt Pro", sans-serif;
     font-size: 3em;
     margin-bottom: 20px;
 }
 
 #projects .head p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.1em;
     color: #474747;
 }
@@ -452,66 +458,69 @@ header .name h1:hover {
 #projects .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    padding: 40px 25px 60px 25px;
     justify-items: center;
-    padding: 40px 0 60px;
 }
 
 #projects .card {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 400px;
     height: 400px;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 2rem;
-    margin: 0 10px;
     display: flex;
     align-items: flex-end;
+    transition:  0.3s ease-in-out;
+    background-position: center;
 }
 
-#projects .card > .row {
+#projects .row {
     color: white;
     display: flex;
-    flex-wrap: nowrap;
+    padding: 5px;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    transition: 0.3s ease-in-out;
 }
 
-#projects .card > .row > .icon {
-    font-family: "Visuelt Pro", sans-serif;
-    background: #000000;
+#projects .icon {
+    font-family: 'Visuelt Pro', sans-serif;
+    background: black;
     color: white;
     border-radius: 50%;
-    width: 50px;
+    width: 64px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px;
 }
 
-#projects .card > .row > .description {
+
+#projects .description {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    overflow: hidden;
-    height: 80px;
-    width: 520px;
+    height: auto;
+    min-height: 80px;
+    width: 100%;
     opacity: 1;
-    transition-delay: .3s;
-    transition: all .3s ease;
-}
-
-#projects .description p {
-    font-family: "Roboto", sans-serif;
-    color: white;
-    padding-top: 5px;
-    padding-right: 50px;
-    padding-bottom: 15px;
+    transition: opacity .3s ease;
 }
 
 #projects .description h4 {
-    font-family: "Visuelt Pro", sans-serif;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,.5);
+    font-family: 'Visuelt Pro', sans-serif;
     text-transform: uppercase;
+    font-size: 1.2em;
+    padding-bottom: 3px;
+}
+
+#projects .description p {
+    font-family: 'Visuelt Pro Regular', sans-serif;
+    color: #b6b6b6;
+    font-size: 1em;
 }
 
 #projects input {
@@ -537,6 +546,8 @@ header .name h1:hover {
     padding: 6px 15px;
 }
 
+
+
 /* footer */
 footer {
     width: 100%;
@@ -557,9 +568,10 @@ footer {
 }
 
 .footer-content {
+    min-width: 450px;
     width: 100%;
     height: 70px;
-    padding-left: 15%;
+    padding-left: 5%;
     padding-right: 10%;
     display: flex;
     align-items: center;
@@ -604,7 +616,7 @@ footer {
     flex-direction: column;
     align-items: center;
     transition: 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 995;
 }
 
 #scroll-up img {
@@ -624,6 +636,16 @@ footer {
 
 
 @media only screen and (max-width: 575px) {
+    /* projects */
+    #projects {
+        padding: 50px;
+    }
+
+    #projects .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .hamburger-button {
         display: block;
         position: fixed;
@@ -663,6 +685,15 @@ footer {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+    #projects {
+        padding: 50px;
+    }
+
+    #projects .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .hamburger-button {
         display: block;
         position: fixed;
