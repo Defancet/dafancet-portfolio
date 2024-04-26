@@ -160,7 +160,7 @@ header .name {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vw;
+    padding: 13vw;
     width: 100%;
     height: 100%;
 }
@@ -169,7 +169,12 @@ header .name h1 {
     font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 8vw;
-    transition: 0.5s ease;
+    transition: color 0.5s;
+}
+
+.name-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 header .name h1:hover {
@@ -635,6 +640,74 @@ footer {
 
 
 @media only screen and (max-width: 575px) {
+    /* about */
+    #about .left h1 {
+        font-size: 2em;
+    }
+
+    #about .left p {
+        font-size: 1.1em;
+    }
+
+    #about .social-links {
+        position: static;
+        padding-top: 40px;
+    }
+
+    #about .left h2 {
+        font-size: 1.4em;
+    }
+
+    #about .social-links {
+        font-size: 0.9rem;
+    }
+
+    #skills .skills-content h2 {
+        font-size: 2.5em;
+    }
+
+    #skills .skills-content p, .skills-container span {
+        font-size: 1em;
+    }
+
+    #skills .skills-content h3 {
+        font-size: 1.1em;
+    }
+
+    /* projects */
+    #projects h2 {
+        font-size: 2.5em;
+    }
+
+    #projects .head p {
+        font-size: 1em;
+    }
+
+    #projects .description h4 {
+        font-size: 1em;
+    }
+
+    #projects .description p {
+        font-size: 0.9em;
+    }
+
+    #projects .all-projects h2 {
+        font-size: 1.3em;
+    }
+
+    #projects .icon {
+        font-family: 'Visuelt Pro', sans-serif;
+        background: black;
+        color: white;
+        border-radius: 50%;
+        width: 64px;
+        height: 55px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+
     #projects .container {
         grid-template-columns: 1fr;
     }
@@ -666,10 +739,6 @@ footer {
     #about .right img {
         max-width: 100%;
         height: auto;
-    }
-
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
     }
 
     #skills .skills-container {
@@ -737,6 +806,11 @@ footer {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+    #about .social-links {
+        position: static;
+        padding-top: 40px;
+    }
+
     #projects .container {
         grid-template-columns: 1fr;
     }
@@ -769,11 +843,6 @@ footer {
         max-width: 100%;
         height: auto;
     }
-
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
-    }
-
 
     #projects .container {
         display: grid;
@@ -820,28 +889,34 @@ footer {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    #projects .container {
-        grid-template-columns: 1fr;
-    }
-    .nav-container {
-        padding: 0 10px;
+    #about .left h1 {
+        font-size: 3em;
     }
 
-    header, section {
-        padding: 20px;
+    #about .left p {
+        font-size: 1.2em;
     }
 
     #about, #skills, #projects {
         padding: 50px;
     }
 
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
+    #about .social-links {
+        font-size: 0.9em;
+    }
+
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        padding: 0 10px;
     }
 
     .left, .right {
         flex: none;
         width: 100%;
     }
+
 }
 
