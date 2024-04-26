@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 @font-face {
     font-family: 'Visuelt Pro';
     src: url('../fonts/VisueltPro-Black.ttf') format('truetype');
@@ -55,7 +54,7 @@ header {
 
 }
 
-.hamburger-button.scrolled  .material-icons {
+.hamburger-button.scrolled .material-icons {
     color: black;
 }
 
@@ -160,7 +159,7 @@ header .name {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vw;
+    padding: 13vw;
     width: 100%;
     height: 100%;
 }
@@ -169,7 +168,12 @@ header .name h1 {
     font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 8vw;
-    transition: 0.5s ease;
+    transition: color 0.5s;
+}
+
+.name-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 header .name h1:hover {
@@ -266,6 +270,7 @@ header .name h1:hover {
 }
 
 #about .about-content {
+    position: relative;
     display: flex;
     max-width: 1200px;
     align-items: center;
@@ -297,12 +302,21 @@ header .name h1:hover {
     margin-bottom: 0.2em;
 }
 
+
 #about .left p {
     font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.3em;
     color: #363636;
     margin-bottom: 2em;
     line-height: 2em;
+}
+
+#about .left h2 {
+    font-family: "Visuelt Pro", sans-serif;
+    text-transform: lowercase;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    padding: 5px 0 5px 0;
 }
 
 #about .left h2 a {
@@ -313,19 +327,14 @@ header .name h1:hover {
 
 #about .left h2 a:hover {
     background-color: #e1e1e1;
-    border-radius: 100px;
-    padding: 6px 15px;
-}
-
-#about .left h2 {
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.5em;
-    margin-left: 0.5em;
+    border-radius: 150px;
+    padding: 6px 15px 6px 15px;
 }
 
 #about .social-links {
-    margin-top: 10em;
+    position: absolute;
+    bottom: 50px;
+    padding: 10px;
 }
 
 #about .social-links a {
@@ -344,6 +353,7 @@ header .name h1:hover {
 .material-symbols-outlined {
     vertical-align: middle;
     margin-left: 1px;
+    padding: 5px 0 5px 0;
 }
 
 #about .social-links i {
@@ -412,7 +422,8 @@ header .name h1:hover {
     gap: 30px;
 }
 
-#skills .programming-languages-left, .web-development-left, .web-development-right, .programming-languages-right, .database, .development-left, .development-right {
+#skills .programming-languages-left, .web-development-left, .web-development-right,
+.programming-languages-right, .database, .development-left, .development-right {
     display: grid;
     grid-gap: 10px;
 }
@@ -468,14 +479,13 @@ header .name h1:hover {
     display: flex;
     align-items: flex-end;
     background-position: center;
-    transition: 0.3s ease-in-out;
 }
 
 #projects .row {
     color: white;
     display: flex;
     padding: 5px;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     transition: 0.3s ease-in-out;
 }
@@ -492,7 +502,6 @@ header .name h1:hover {
     align-items: center;
     margin: 15px;
 }
-
 
 #projects .description {
     display: flex;
@@ -527,6 +536,7 @@ header .name h1:hover {
     text-transform: lowercase;
     font-size: 1.5em;
     margin-left: 1.5em;
+    padding: 5px 0 5px 0;
 }
 
 #projects .all-projects h2 a {
@@ -538,10 +548,8 @@ header .name h1:hover {
 #projects h2 a:hover {
     background-color: #e1e1e1;
     border-radius: 100px;
-    padding: 6px 15px;
+    padding: 6px 15px 6px 15px;
 }
-
-
 
 /* footer */
 footer {
@@ -563,11 +571,9 @@ footer {
 }
 
 .footer-content {
-    min-width: 450px;
     width: 100%;
     height: 70px;
     padding-left: 5%;
-    padding-right: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -625,25 +631,25 @@ footer {
     font-family: "Visuelt Pro Medium", sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
-    writing-mode: sideways-lr;
-    text-orientation: upright;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
 }
 
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
 
 @media only screen and (max-width: 575px) {
-    #projects .container {
-        grid-template-columns: 1fr;
-    }
-
-    #projects .card {
-        max-width: 100%;
-        height: auto;
-    }
-
-    #projects .description {
-        padding: 10px;
-    }
-
+    /* about */
     #about, #skills, #projects {
         padding: 20px;
     }
@@ -664,16 +670,93 @@ footer {
         height: auto;
     }
 
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
+    #about .left h1 {
+        font-size: 2em;
+    }
+
+    #about .left p {
+        font-size: 1.1em;
+    }
+
+    #about .social-links {
+        position: static;
+        padding-top: 40px;
+    }
+
+    #about .left h2 {
+        font-size: 1.4em;
+    }
+
+    #about .social-links {
+        font-size: 0.9rem;
+    }
+
+    #about .about-content {
+        display: block;
+    }
+
+    /* skills */
+    #skills .skills-content h2 {
+        font-size: 2.5em;
+    }
+
+    #skills .skills-content p, .skills-container span {
+        font-size: 1em;
+    }
+
+    #skills .skills-content h3 {
+        font-size: 1.1em;
     }
 
     #skills .skills-container {
         display: block;
     }
 
-    #about .about-content{
-        display: block;
+    /* projects */
+    #projects h2 {
+        font-size: 2.5em;
+    }
+
+    #projects .head p {
+        font-size: 1em;
+    }
+
+    #projects .description h4 {
+        font-size: 1em;
+    }
+
+    #projects .description p {
+        font-size: 0.9em;
+    }
+
+    #projects .all-projects h2 {
+        font-size: 1.3em;
+    }
+
+    #projects .icon {
+        font-family: 'Visuelt Pro', sans-serif;
+        background: black;
+        color: white;
+        border-radius: 50%;
+        width: 64px;
+        height: 55px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    #projects .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #projects .description {
+        padding: 10px;
     }
 
     #projects .container {
@@ -681,6 +764,7 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* navbar */
     .hamburger-button {
         display: block;
         position: fixed;
@@ -733,21 +817,14 @@ footer {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    #projects .container {
-        grid-template-columns: 1fr;
-    }
-
-    #projects .card {
-        max-width: 100%;
-        height: auto;
-    }
-
-    #projects .description {
-        padding: 10px;
-    }
-
+    /* about */
     #about, #skills, #projects {
         padding: 20px;
+    }
+
+    #about .social-links {
+        position: static;
+        padding-top: 40px;
     }
 
     #about .about-content {
@@ -766,16 +843,21 @@ footer {
         height: auto;
     }
 
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
-    }
-
-
+    /* projects */
     #projects .container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 
+    #projects .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #projects .description {
+        padding: 10px;
+    }
+
+    /* navbar */
     .hamburger-button {
         display: block;
         position: fixed;
@@ -816,23 +898,30 @@ footer {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    #projects .container {
-        grid-template-columns: 1fr;
-    }
-    .nav-container {
-        padding: 0 10px;
+    /* about */
+    #about .left h1 {
+        font-size: 3em;
     }
 
-    header, section {
-        padding: 20px;
+    #about .left p {
+        font-size: 1.2em;
     }
 
     #about, #skills, #projects {
         padding: 50px;
     }
 
-    #about .left h1, #about .left p, #about .left h2 {
-        font-size: calc(100% + 1vw);
+    #about .social-links {
+        font-size: 0.9em;
+    }
+
+    /* projects */
+    #projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        padding: 0 10px;
     }
 
     .left, .right {
@@ -840,4 +929,3 @@ footer {
         width: 100%;
     }
 }
-
