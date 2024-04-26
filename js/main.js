@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.nav-container');
     const navContainer = document.querySelector('header');
     const scrollUp = document.getElementById('scroll-up');
@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const body = document.body;
     const breakpoint = 900;
+
+    const fadeElements = document.querySelectorAll('.fade-in-section');
+
+    function checkVisibility() {
+        const windowHeight = window.innerHeight;
+        fadeElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+    }
 
     function checkScroll() {
         if (window.scrollY > scrollThreshold) {
@@ -54,21 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hideMenuOnClick(); 
+        link.addEventListener('click', function () {
+            hideMenuOnClick();
         });
     });
-    
+
     function scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     scrollUp.addEventListener('click', scrollToTop);
-    
+
     window.addEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
     hamburgerButton.addEventListener('click', toggleMenu);
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         if (window.innerWidth > breakpoint && body.classList.contains('no-scroll')) {
             body.classList.remove('no-scroll');
         }
@@ -77,5 +91,4 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburgerButton.classList.remove('active');
         }
     });
-
 });
