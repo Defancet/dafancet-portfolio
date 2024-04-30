@@ -2,8 +2,6 @@
 
 This is a personal profile website project designed to showcase key information about me.
 
-**Demo:** https://defancet.github.io/fit-itw-web-portfolio/
-
 ## Technologies Used
 
 - **HTML5**: For structuring the web content.
