@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.nav-container');
-    const navContainer = document.querySelector('header');
+    const navContainer = document.querySelector('.nav-container');
     const scrollUp = document.getElementById('scroll-up');
     const scrollThreshold = 50;
     const hamburgerButton = document.querySelector('.hamburger-button');
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function checkScroll() {
+        console.log(window.scrollY);  // Check the current scroll position
+
         if (window.scrollY > scrollThreshold) {
             navbar.classList.add('scrolled');
             navContainer.classList.add('scrolled');

@@ -368,6 +368,78 @@ header .name h1:hover {
     font-size: 1.5rem;
 }
 
+/* about more*/
+#about-more {
+    height: 100vh; /* Full viewport height */
+    padding: 100px; /* Padding around the inner content */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+.about-more-content {
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included within width/height */
+    width: 100%; /* Utilizes the full width of the parent minus padding */
+    max-width: 1200px; /* Maximum width of the content */
+}
+
+
+#about-more .about-more-content p {
+    font-family: "Visuelt Pro Regular", sans-serif;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #474747;
+}
+
+#about-more .about-more-content h1 {
+    font-family: "Visuelt Pro", sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#about-more h2 {
+    font-family: "Visuelt Pro", sans-serif;
+    text-transform: lowercase;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    padding: 5px 0 5px 20px;
+}
+
+#about-more h2 a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+#about-more h2 a:hover {
+    background-color: #e1e1e1;
+    border-radius: 150px;
+    padding: 6px 15px 6px 0;
+    margin-left: -10px;
+}
+
+.about-page .nav-container,
+.about-page .nav-bar ul li a,
+.about-page .hamburger-button .material-icons,
+.about-page .nav-bar ul li a::after {
+    color: black;
+}
+
+.about-page .nav-container.scrolled,
+.about-page .hamburger-button.scrolled .material-icons {
+    color: black;
+}
+
+.about-page .hamburger .line,
+.about-page .nav-bar ul li a:hover::after,
+.about-page .nav-bar ul li a:focus::after {
+    background-color: black;
+}
+
 /* skills */
 #skills {
     background-color: #f9f9f9;
@@ -650,7 +722,7 @@ footer {
 
 @media only screen and (max-width: 575px) {
     /* about */
-    #about, #skills, #projects {
+    #about, #skills, #about-more, #projects {
         padding: 20px;
     }
 
@@ -818,7 +890,7 @@ footer {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     /* about */
-    #about, #skills, #projects {
+    #about, #skills, #about-more, #projects {
         padding: 20px;
     }
 
