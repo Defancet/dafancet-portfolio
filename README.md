@@ -14,4 +14,4 @@ This is a personal profile website project designed to showcase key information 
 - Navigate to the project directory.
 - Open `index.html` in your web browser to view the project.
 
-Or you can view the project online [here](https://defancet.github.io/fit-itw-web-portfolio/).
+Or you can view the project online [here](https://defancet.github.io/defancet-portfolio/).
