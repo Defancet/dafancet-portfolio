@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (name.length == 0) {
             nameError.innerHTML = "* What is your name?";
-            nameInput.style.backgroundColor = ""; // Reset to default or error color
+            nameInput.style.backgroundColor = "";
             return false;
         }
         nameError.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
-        nameInput.style.backgroundColor = "#e1ffe0"; // Light green when valid
+        nameInput.style.backgroundColor = "#e1ffe0";
         return true;
     }
 
@@ -80,8 +80,15 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function(){submitError.style.display = 'none';}, 3000);
             return false;
         } else {
-            alert("Response submitted");
+            submitForm();
+            return true;
         }
+    }
+
+    function submitForm() {
+        var messageSent = document.getElementById('message-sent');
+        messageSent.style.display = 'block'; 
+        setTimeout(function(){ messageSent.style.display = 'none'; }, 3000);
     }
 
     window.validateName = validateName;
@@ -89,4 +96,5 @@ document.addEventListener('DOMContentLoaded', function () {
     window.validateSubject = validateSubject;
     window.validateMessage = validateMessage;
     window.validateForm = validateForm;
+    window.submitForm = submitForm;
 });

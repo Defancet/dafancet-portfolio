@@ -39,31 +39,32 @@
         <p>
             If you have any questions or want to work with me, feel free to contact me. </p>
         <div class="form-container">
-            <form>
+            <form action="https://formsubmit.co/40691f47cb6a579f7a7803954ab40d7c" method="POST">
                 <div class="input-group">
                     <span id="name-error"> </span>
-                    <input type="text" placeholder="Your Name" id="contact-name" onkeyup="validateName()">
+                    <input type="text" maxlength="50" placeholder="Your Name" id="contact-name" onkeyup="validateName()">
                 </div>
 
                 <div class="input-group">
                     <span id="email-error"></span>
-                    <input type="email" placeholder="Your Email" id="contact-email" onkeyup="validateEmail()">
+                    <input type="email" maxlength="254" placeholder="Your Email" id="contact-email" onkeyup="validateEmail()">
                 </div>
 
                 <div class="input-group">
                     <span id="subject-error"></span>
-                    <input type="text" placeholder="Subject" id="contact-subject" onkeyup="validateSubject()">
+                    <input type="text" maxlength="100" placeholder="Subject" id="contact-subject" onkeyup="validateSubject()">
                 </div>
 
                 <div class="input-group">
                     <span id="message-error"></span>
-                    <textarea rows="5" placeholder="Message" id="contact-message" onkeyup="validateMessage()"></textarea>
+                    <textarea rows="5" maxlength="500" placeholder="Message" id="contact-message" onkeyup="validateMessage()"></textarea>
                 </div>
 
                 <button type="submit" onclick="return validateForm()">
                     <span id="contact-button-text">Send Message</span>
                     <span class="material-symbols-outlined">send</span>
                 </button>
+                <span id="message-sent" style="display: none; color: #4fcc4b;">Message sent</span>
                 <span id="submit-error"></span>
             </form>
         </div>

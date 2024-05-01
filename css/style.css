@@ -370,7 +370,6 @@ header .name h1:hover {
 
 /* about more*/
 #about-more {
-    height: 100vh;
     padding: 100px;
     width: 100%;
     display: flex;
@@ -397,6 +396,7 @@ header .name h1:hover {
 #about-more .about-more-content h1 {
     font-family: "Visuelt Pro", sans-serif;
     font-size: 3rem;
+    padding-top: 100px;
     margin-bottom: 20px;
 }
 
@@ -624,7 +624,6 @@ header .name h1:hover {
 
 /* contact */
 #contact {
-    height: 100vh;
     padding: 100px;
     width: 100%;
     display: flex;
@@ -650,6 +649,7 @@ header .name h1:hover {
 
 #contact .contact-content h1 {
     font-family: "Visuelt Pro", sans-serif;
+    padding-top: 100px;
     font-size: 3rem;
     margin-bottom: 20px;
 }
@@ -660,7 +660,7 @@ header .name h1:hover {
     font-size: 1.5em;
     margin-left: 0.5em;
     padding: 5px 0 5px 20px;
-    transform: translateY(-53px);
+    transform: translateY(-65px);
     width: 120px;
 }
 
@@ -707,12 +707,13 @@ header .name h1:hover {
 }
 
 .input-group input, .input-group textarea {
+    font-family: "Visuelt Pro Regular", sans-serif;
     flex-basis: 100%;
     background: transparent;
     border: 0;
     outline: 0;
     padding: 10px 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 2px solid #999;
     color: #333;
     font-size: 16px;
 }
@@ -721,6 +722,10 @@ header .name h1:hover {
     font-family: "Visuelt Pro Regular", sans-serif;
     color: #474747;
     font-size: 18px;
+}
+
+textarea {
+    resize: none;
 }
 
 .form-container form button {
@@ -745,11 +750,22 @@ header .name h1:hover {
     border: 1px solid #000;
 }
 
+#message-sent {
+    font-family: "Visuelt Pro Regular", sans-serif;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-bottom: 2px solid black;
+}
+
 /* footer */
 footer {
     width: 100%;
     position: relative;
-    height: 300px;
+    height: 200px;
     background: black;
 }
 
@@ -798,10 +814,10 @@ footer {
 .footer-contact h1 {
     font-family: "Visuelt Pro", sans-serif;
     text-transform: lowercase;
-    font-size: 2em;
+    font-size: 1.7em;
     color: white;
     margin-left: 0.5em;
-    padding: 5px 0 5px 5px;
+    padding: 30px 0 5px 5px;
 }
 
 .footer-contact h1 a {
@@ -864,7 +880,7 @@ footer {
 
 @media only screen and (max-width: 575px) {
     /* about */
-    #about, #skills, #about-more, #projects {
+    #about, #skills, #about-more, #projects, #contact {
         padding: 20px;
     }
 
@@ -978,6 +994,11 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* contact */
+    #contact h2 {
+        display: none;
+    }
+
     /* navbar */
     .hamburger-button {
         display: block;
@@ -1032,7 +1053,7 @@ footer {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     /* about */
-    #about, #skills, #about-more, #projects {
+    #about, #skills, #about-more, #projects, #contact {
         padding: 20px;
     }
 
