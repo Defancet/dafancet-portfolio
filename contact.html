@@ -13,6 +13,7 @@
 </head>
 <body class="about-page">
 <script src="js/main.js"></script>
+<script src="js/contact.js"></script>
 
 <button class="hamburger-button" aria-label="Toggle navigation">
     <i class="material-icons">menu</i>
@@ -40,24 +41,30 @@
         <div class="form-container">
             <form>
                 <div class="input-group">
-                    <input type="text" placeholder="Your Name">
+                    <span id="name-error"> </span>
+                    <input type="text" placeholder="Your Name" id="contact-name" onkeyup="validateName()">
                 </div>
 
                 <div class="input-group">
-                    <input type="email" placeholder="Your Email">
+                    <span id="email-error"></span>
+                    <input type="email" placeholder="Your Email" id="contact-email" onkeyup="validateEmail()">
                 </div>
 
                 <div class="input-group">
-                    <input type="subject" placeholder="Subject">
+                    <span id="subject-error"></span>
+                    <input type="text" placeholder="Subject" id="contact-subject" onkeyup="validateSubject()">
                 </div>
 
                 <div class="input-group">
-                    <textarea rows="5" placeholder="Message"></textarea>
+                    <span id="message-error"></span>
+                    <textarea rows="5" placeholder="Message" id="contact-message" onkeyup="validateMessage()"></textarea>
                 </div>
 
-                <button id="contact-submit-button" type="submit" name="submit">
+                <button type="submit" onclick="return validateForm()">
                     <span id="contact-button-text">Send Message</span>
+                    <span class="material-symbols-outlined">send</span>
                 </button>
+                <span id="submit-error"></span>
             </form>
         </div>
         <h2>
