@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function submitForm() {
         var messageSent = document.getElementById('message-sent');
-        messageSent.style.display = 'block'; 
+        messageSent.style.display = 'block';
         setTimeout(function(){ messageSent.style.display = 'none'; }, 3000);
     }
 
