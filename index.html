@@ -54,12 +54,14 @@
         <div class="left">
             <h1>Software Developer.</h1>
             <p> Hi, I'm Maksim Kalutski. A software developer and CS student based in Brno, Czech Republic. </p>
-            <h2>
-                <a href="about.html">
-                    Learn more
-                    <span class="material-symbols-outlined">arrow_right_alt</span>
-                </a>
-            </h2>
+            <button id="cta-about" class="cta">
+                <a href="about.html">Learn more</a>
+                <svg width="25px" height="15px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+
             <div class="social-links">
                 <span><a href="https://www.linkedin.com/in/maksim-kalutski-3b0784299/" target="_blank"
                          rel="noopener noreferrer">
@@ -79,8 +81,9 @@
 <section id="skills" class="fade-in-section">
     <div class="skills-content">
         <h2>My Skills.</h2>
-        <p>I have experience with a variety of programming languages and technologies. Here are some of the
-            technologies I've worked with</p>
+        <p>I have strong background in web development, programming, and database management. I love the challenge of
+            using the right tools and technologies to build great products. Here are some of the technologies I've
+            worked with</p>
         <div class="skills-container">
             <div class="skills-left">
                 <h3>Programming Languages</h3>
@@ -148,7 +151,8 @@
     <div class="wrapper">
         <div class="head">
             <h2>My Projects.</h2>
-            <p>Here are some of the projects I've worked on. You can find more on my GitHub profile.</p>
+            <p>I'm a big fan of building a wide range of applications – web stuff, backend systems, desktop tools... you
+                name it. You can find some of my projects on my GitHub profile.</p>
         </div>
         <div class="container">
             <a href="https://github.com/Defancet/money-management-itu-2023" class="card">
@@ -157,10 +161,9 @@
                         <div class="icon">1.</div>
                         <div class="description">
                             <h4>FinanSync</h4>
-                            <p>A finance management finance management application leverages Prisma Client and SQLite
-                                for backend operations. The frontend uses Vue3, Axios, and Chart.js to provide a dynamic
-                                user interface that includes real-time financial data visualization through interactive
-                                charts.</p>
+                            <p>A finance management application uses Prisma Client and SQLite for backend operations.
+                                The frontend uses Vue3, Axios, and Chart.js to provide a dynamic user interface that
+                                includes real-time financial data visualization through interactive charts.</p>
                         </div>
                     </div>
                     <img src="images/project1.png" alt="FinanSync Project Image">
@@ -172,9 +175,9 @@
                         <div class="icon">2.</div>
                         <div class="description">
                             <h4>Paddy's Pub Website</h4>
-                            <p>A web presentation for Paddy's Pub. It incorporates HTML5, CSS3, and JavaScript,
-                                showcasing a comprehensive layout with advanced CSS stylings such as parallax
-                                backgrounds, CSS animations, custom fonts and video integration.</p>
+                            <p>A web presentation for Paddy's Pub. Delivered in a layout powered by HTML5, CSS3, and
+                                JavaScript web presentation, with all the latest stylings of advanced CSS like parallax
+                                backgrounds, CSS animations, custom fonts, and video integration.</p>
                         </div>
                     </div>
                     <img src="images/project2.png" alt="Paddy's Pub Website Project Image">
@@ -194,10 +197,20 @@
                     <img src="images/project3.jpg" alt="TimeTracker Project Image">
                 </div>
             </a>
-            <a href="https://github.com/Defancet/fit-ims-kohoutovice-simulation" class="card">
+            <a href="https://github.com/Defancet/fit-ipp-php-interpreter" class="card">
                 <div class="row">
                     <div class="text">
                         <div class="icon">4.</div>
+                        <div class="description">
+                            <h4>XML Interpreter</h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/Defancet/fit-ims-kohoutovice-simulation" class="card">
+                <div class="row">
+                    <div class="text">
+                        <div class="icon">5.</div>
                         <div class="description">
                             <h4>Kohoutovice Simulation</h4>
                         </div>
@@ -207,7 +220,7 @@
             <a href="https://github.com/Defancet/fit-isa-dhcp-monitoring" class="card">
                 <div class="row">
                     <div class="text">
-                        <div class="icon">5.</div>
+                        <div class="icon">6.</div>
                         <div class="description">
                             <h4>DHCP Monitoring</h4>
                         </div>
@@ -217,7 +230,7 @@
             <a href="https://github.com/Defancet/fit-ids-sql-bakery" class="card">
                 <div class="row">
                     <div class="text">
-                        <div class="icon">6.</div>
+                        <div class="icon">7.</div>
                         <div class="description">
                             <h4>Bakery Information System</h4>
                         </div>
@@ -227,7 +240,7 @@
             <a href="https://github.com/Defancet/fit-imp-arm-fitkit3-snake" class="card">
                 <div class="row">
                     <div class="text">
-                        <div class="icon">7.</div>
+                        <div class="icon">8.</div>
                         <div class="description">
                             <h4>ARM-FITkit3: Game SNAKE</h4>
                         </div>
@@ -237,7 +250,7 @@
             <a href="https://github.com/Defancet/fit-ipk-network-sniffer" class="card">
                 <div class="row">
                     <div class="text">
-                        <div class="icon">8.</div>
+                        <div class="icon">9.</div>
                         <div class="description">
                             <h4>Network Sniffer</h4>
                         </div>
@@ -246,12 +259,13 @@
             </a>
         </div>
         <div class="all-projects">
-            <h2>
-                <a href="https://github.com/Defancet?tab=repositories" target="_blank" rel="noopener noreferrer">
-                    See all of my projects
-                    <span class="material-symbols-outlined">arrow_right_alt</span>
-                </a>
-            </h2>
+            <button id="cta-projects" class="cta">
+                <a href="https://github.com/Defancet?tab=repositories">See all of my projects</a>
+                <svg width="25px" height="15px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
         </div>
     </div>
 </section>
@@ -264,12 +278,13 @@
 <footer class="footer">
     <div class="footer-wrapper">
         <div class="footer-contact">
-            <h1>
-                <a href="contact.html">
-                    Contact me
-                    <span class="material-symbols-outlined">arrow_right_alt</span>
-                </a>
-            </h1>
+            <button id="cta-contact" class="cta-contact">
+                <a href="contact.html">Contact me</a>
+                <svg width="25px" height="15px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
         </div>
         <div class="footer-content">
             <div class="footer-copyright">
