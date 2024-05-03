@@ -23,7 +23,10 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    overflow-x: hidden;
+}
+
+html body.no-scroll{
+    overflow: hidden;
 }
 
 
@@ -138,11 +141,6 @@ header {
 .nav-bar ul {
     display: flex;
     justify-content: center;
-}
-
-body.no-scroll {
-    overflow: hidden;
-    height: 100vh;
 }
 
 @keyframes slideDown {
@@ -283,7 +281,7 @@ header .name h1:hover {
 }
 
 #about .right img {
-    width: 500px;
+    width: 100%;
     height: auto;
     padding-bottom: 50px;
 }
@@ -302,16 +300,16 @@ header .name h1:hover {
     margin-bottom: 0.2em;
 }
 
-
 #about .left p {
     font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.3em;
     color: #363636;
-    margin-bottom: 2em;
     line-height: 2em;
+    padding-bottom: 20px;
 }
 
 .cta {
+    display: inline-block;
     position: relative;
     margin: auto;
     padding: 10px 20px;
@@ -319,28 +317,25 @@ header .name h1:hover {
     border: none;
     background: none;
     cursor: pointer;
+    text-decoration: none;
+    font-family: "Visuelt Pro", sans-serif;
+    text-transform: lowercase;
+    font-size: 1.6em;
+    color: #000;
+    transform: scale(1);
 }
 
 .cta:before {
-    border: 0;
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     border-radius: 50px;
-    background: #ffffff;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     transition: all 0.3s ease;
-}
-
-.cta a {
-    position: relative;
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.8em;
-    color: #000;
+    z-index: -1;
 }
 
 .cta svg {
@@ -357,8 +352,6 @@ header .name h1:hover {
 }
 
 .cta:hover:before {
-    width: 100%;
-    border: 0;
     background: #f1f1f1;
 }
 
@@ -369,6 +362,42 @@ header .name h1:hover {
 .cta:active {
     transform: scale(0.95);
 }
+
+#footer-contact-id .cta {
+    margin-top: 20px;
+    color: white;
+}
+
+#footer-contact-id .cta svg {
+    stroke: white;
+}
+
+#footer-contact-id .cta:hover {
+    color: black;
+}
+
+#footer-contact-id .cta:hover svg {
+    stroke: black;
+}
+
+#contact .cta {
+    transform: translateY(-60px);
+}
+
+#about-more .cta svg,
+#contact .cta svg,
+#contact-success .cta svg {
+    margin-right: 8px;
+    transform: translateX(5px) rotate(180deg);
+}
+
+#about-more .cta:hover svg,
+#contact .cta:hover svg,
+#contact-success .cta:hover svg {
+    transform: translateX(0) rotate(180deg);
+}
+
+
 
 #about .social-links {
     position: absolute;
@@ -689,10 +718,6 @@ header .name h1:hover {
     display: none;
 }
 
-#cta-projects {
-    margin-left: 30px;
-}
-
 /* contact */
 #contact {
     padding: 100px;
@@ -761,7 +786,7 @@ header .name h1:hover {
     border: 0;
     outline: 0;
     padding: 10px 0;
-    border-bottom: 2px solid #999;
+    border-bottom: 1px solid #999;
     color: #333;
     font-size: 16px;
 }
@@ -795,7 +820,7 @@ textarea {
     margin-bottom: 3px;
 }
 
-button::before {
+.form-container button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -827,7 +852,7 @@ button:hover::before {
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 #contact-success {
@@ -861,69 +886,6 @@ button:hover::before {
     margin-bottom: 20px;
 }
 
-.cta-back {
-    position: relative;
-    margin: auto;
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.cta-back:before {
-    border: 0;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 50px;
-    background: #ffffff;
-    width: auto;
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.cta-back a {
-    position: relative;
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.8em;
-    color: #000;
-}
-
-.cta-back svg {
-    position: relative;
-    top: 0;
-    margin-right: 8px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #000;
-    stroke-width: 2;
-    transform: translateX(5px) rotate(180deg);
-    transition: all 0.3s ease;
-}
-
-.cta-back:hover:before {
-    width: 100%;
-    border: 0;
-    background: #f1f1f1;
-}
-
-.cta-back:hover svg {
-    transform: translateX(0) rotate(180deg);
-}
-
-.cta-back:active {
-    transform: scale(0.95);
-}
-
-#cta-back-contact {
-    transform: translateY(-60px);
-}
-
 /* footer */
 footer {
     width: 100%;
@@ -934,7 +896,6 @@ footer {
 
 .footer-wrapper {
     width: 100%;
-    background: black;
     height: 100%;
     padding: 0;
     bottom: 0;
@@ -972,78 +933,6 @@ footer {
 .footer-links a:hover i {
     background-color: white;
     color: black;
-}
-
-.cta-contact {
-    margin-top: 20px;
-    position: relative;
-    padding: 10px 20px;
-    transition: all 0.2s ease;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: white;
-    background: black;
-    transform: scale(1);
-}
-
-#cta-contact:before {
-    border: 0;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 50px;
-    color: white;
-    background-color: white;
-    width: auto;
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.cta-contact a {
-    position: relative;
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.8em;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.cta-contact svg {
-    position: relative;
-    top: 0;
-    margin-left: 8px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: white;
-    stroke-width: 2;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-}
-
-#cta-contact:hover:before {
-    width: 100%;
-    border: 0;
-    background: white;
-}
-
-#cta-contact:hover svg {
-    transform: translateX(0);
-    stroke: black;
-}
-
-#cta-contact:hover a {
-    transform: translateX(0);
-    color: black;
-}
-
-.cta-contact:active {
-    transform: scale(0.95);
-    color: black;
-    background: black;
 }
 
 /* scroll on top button */
@@ -1093,7 +982,7 @@ footer {
 
 @media only screen and (max-width: 575px) {
     /* about */
-    #about, #skills, #about-more, #projects, #contact {
+    #about, #skills, #about-more, #projects, #contact, #contact-success {
         padding: 20px;
     }
 
@@ -1131,11 +1020,23 @@ footer {
     }
 
     #about .social-links {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     #about .about-content {
         display: block;
+    }
+
+    #about-more .about-more-content h1 {
+        font-size: 2.5em;
+    }
+
+    #about-more .about-more-content p {
+        font-size: 1em;
+    }
+
+    .cta {
+        font-size: 1.3em;
     }
 
     /* skills */
@@ -1165,11 +1066,11 @@ footer {
     }
 
     #projects .description h4 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     #projects .description p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     #projects .all-projects h2 {
@@ -1211,8 +1112,28 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    #projects .cta {
+        margin-bottom: 30px;
+    }
+
     /* contact */
-    #contact h2 {
+    #contact .contact-content h1 {
+        font-size: 2.5em;
+    }
+
+    #contact .contact-content p {
+        font-size: 1em;
+    }
+
+    #contact-success .contact-success-content h1 {
+        font-size: 2.5em;
+    }
+
+    #contact-success .contact-success-content p {
+        font-size: 1em;
+    }
+
+    #contact .cta {
         display: none;
     }
 
@@ -1255,22 +1176,29 @@ footer {
     }
 
     #scroll-up {
-        bottom: 20px;
-        right: 10px;
+        bottom: 25px;
+        right: 15px;
     }
 
     .footer-content {
         display: grid;
+        gap: 5px;
     }
 
     .footer-content p {
         font-size: 0.9em;
     }
+
+    .form-container form button {
+        width: 100%;
+        font-size: 13px;
+        padding: 15px 30px;
+    }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     /* about */
-    #about, #skills, #about-more, #projects, #contact {
+    #about, #skills, #about-more, #projects, #contact, #contact-success {
         padding: 20px;
     }
 
@@ -1328,6 +1256,10 @@ footer {
         width: 100%;
         align-items: center;
         padding: 0 5px 0 0;
+    }
+
+    #projects .cta {
+        margin-bottom: 50px;
     }
 
     /* navbar */
@@ -1388,12 +1320,19 @@ footer {
         font-size: 0.9em;
     }
 
+    #about .right img {
+        width: 100%;
+        height: auto;
+    }
     /* projects */
     #projects img {
         width: 60%;
         height: 240px;
     }
 
+    #projects .card {
+        height: 240px;
+    }
 
     .nav-container {
         padding: 0 10px;
