@@ -658,9 +658,9 @@ header .name h1:hover {
 
 #projects .text {
     display: flex;
-    width: 100%;
-    align-items: center;
-    padding: 0 35px 0 0;
+    height: auto;
+    align-items: start;
+    padding: 0 35px 15px 0;
 }
 
 #projects .description, #projects .icon {
@@ -669,7 +669,7 @@ header .name h1:hover {
 
 #projects img {
     object-fit: cover;
-    width: 600px;
+    width: 400px;
     height: 200px;
 }
 
@@ -1234,7 +1234,7 @@ footer {
     }
 
     #projects img {
-        width: 400px;
+        width: 250px;
         height: 200px;
     }
 
@@ -1324,14 +1324,15 @@ footer {
         width: 100%;
         height: auto;
     }
+
     /* projects */
     #projects .card {
-        max-width: 100%;
         height: auto;
     }
 
     #projects img {
-        width: 400px;
+        width: 200px;
+        height: 200px;
     }
 
     #projects .card {
