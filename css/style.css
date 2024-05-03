@@ -311,30 +311,71 @@ header .name h1:hover {
     line-height: 2em;
 }
 
-#about .left h2 {
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cta:before {
+    border: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #ffffff;
+    width: auto;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.cta a {
+    position: relative;
     font-family: "Visuelt Pro", sans-serif;
     text-transform: lowercase;
-    font-size: 1.5em;
-    margin-left: 0.5em;
-    padding: 5px 0 5px 0;
+    font-size: 1.8em;
+    color: #000;
 }
 
-#about .left h2 a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s ease-in-out;
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 8px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #000;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
-#about .left h2 a:hover {
-    background-color: #e1e1e1;
-    border-radius: 150px;
-    padding: 6px 15px 6px 15px;
+.cta:hover:before {
+    width: 100%;
+    border: 0;
+    background: #f1f1f1;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.95);
 }
 
 #about .social-links {
     position: absolute;
     bottom: 50px;
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #about .social-links a {
@@ -357,14 +398,16 @@ header .name h1:hover {
 }
 
 #about .social-links i {
-    font-size: 1em;
-    margin-right: 5px;
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 5px;
 }
 
 #about .social-links span:not(:last-child)::after {
     content: " / ";
     margin: 8px;
-    color: black;
+    color: gray;
     font-size: 1.5rem;
 }
 
@@ -379,7 +422,7 @@ header .name h1:hover {
 }
 
 .about-more-content {
-    padding: 20px;
+    padding: 50px 20px 100px 20px;
     box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
@@ -463,6 +506,14 @@ header .name h1:hover {
     color: #474747;
 }
 
+#skills .skills-content p, #projects .head p {
+    line-height: 1.7;
+}
+
+#projects .description p {
+    line-height: 1.6;
+}
+
 #skills .skills-content h2 {
     font-family: "Visuelt Pro", sans-serif;
     font-size: 3rem;
@@ -527,6 +578,7 @@ header .name h1:hover {
 }
 
 #projects .head p {
+    max-width: 1200px;
     font-family: "Visuelt Pro Regular", sans-serif;
     font-size: 1.1em;
     color: #474747;
@@ -558,7 +610,8 @@ header .name h1:hover {
 #projects .container .card:nth-child(5),
 #projects .container .card:nth-child(6),
 #projects .container .card:nth-child(7),
-#projects .container .card:nth-child(8) {
+#projects .container .card:nth-child(8),
+#projects .container .card:nth-child(9) {
     height: 100px;
 }
 
@@ -623,7 +676,7 @@ header .name h1:hover {
     font-family: 'Visuelt Pro', sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
 }
 
 #projects .description p {
@@ -636,24 +689,8 @@ header .name h1:hover {
     display: none;
 }
 
-#projects .all-projects h2 {
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.5em;
-    margin-left: 1.5em;
-    padding: 5px 0 5px 0;
-}
-
-#projects .all-projects h2 a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s ease-in-out;
-}
-
-#projects h2 a:hover {
-    background-color: #e1e1e1;
-    border-radius: 100px;
-    padding: 6px 15px 6px 15px;
+#cta-projects {
+    margin-left: 30px;
 }
 
 /* contact */
@@ -686,29 +723,6 @@ header .name h1:hover {
     padding-top: 100px;
     font-size: 3rem;
     margin-bottom: 20px;
-}
-
-#contact h2 {
-    font-family: "Visuelt Pro", sans-serif;
-    text-transform: lowercase;
-    font-size: 1.5em;
-    margin-left: 0.5em;
-    padding: 5px 0 5px 20px;
-    transform: translateY(-65px);
-    width: 120px;
-}
-
-#contact h2 a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s ease-in-out;
-}
-
-#contact h2 a:hover {
-    background-color: #e1e1e1;
-    border-radius: 150px;
-    padding: 6px 15px 6px 0;
-    margin-left: -10px;
 }
 
 .form-container {
@@ -764,24 +778,45 @@ textarea {
 
 .form-container form button {
     font-family: "Visuelt Pro", sans-serif;
-    font-size: 1em;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    background: #000;
-    color: #fff;
-    border: 0;
+    background: black;
+    color: white;
+    border: none;
     padding: 20px 30px;
-    outline: 0;
+    display: inline-block;
+    font-size: 15px;
+    width: 240px;
+    text-transform: uppercase;
     cursor: pointer;
-    display: block;
-    margin: 35px 0 0 auto;
+    transform: skew(0);
+}
+
+.form-container form button span {
+    margin-bottom: 3px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+    border: 1px solid black;
 }
 
 .form-container form button:hover {
-    background: #fff;
-    color: #000;
-    padding: 19px 29px;
-    border: 1px solid #000;
+    color: black;
+}
+
+button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
 }
 
 #message-sent {
@@ -826,26 +861,67 @@ textarea {
     margin-bottom: 20px;
 }
 
-#contact-success h2 {
+.cta-back {
+    position: relative;
+    margin: auto;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cta-back:before {
+    border: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #ffffff;
+    width: auto;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.cta-back a {
+    position: relative;
     font-family: "Visuelt Pro", sans-serif;
     text-transform: lowercase;
-    font-size: 1.5em;
-    margin-left: 0.5em;
-    padding: 5px 0 5px 20px;
-    width: 120px;
+    font-size: 1.8em;
+    color: #000;
 }
 
-#contact-success h2 a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s ease-in-out;
+.cta-back svg {
+    position: relative;
+    top: 0;
+    margin-right: 8px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #000;
+    stroke-width: 2;
+    transform: translateX(5px) rotate(180deg);
+    transition: all 0.3s ease;
 }
 
-#contact-success h2 a:hover {
-    background-color: #e1e1e1;
-    border-radius: 150px;
-    padding: 6px 15px 6px 0;
-    margin-left: -10px;
+.cta-back:hover:before {
+    width: 100%;
+    border: 0;
+    background: #f1f1f1;
+}
+
+.cta-back:hover svg {
+    transform: translateX(0) rotate(180deg);
+}
+
+.cta-back:active {
+    transform: scale(0.95);
+}
+
+#cta-back-contact {
+    transform: translateY(-60px);
 }
 
 /* footer */
@@ -898,26 +974,76 @@ footer {
     color: black;
 }
 
-.footer-contact h1 {
+.cta-contact {
+    margin-top: 20px;
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    background: black;
+    transform: scale(1);
+}
+
+#cta-contact:before {
+    border: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    color: white;
+    background-color: white;
+    width: auto;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.cta-contact a {
+    position: relative;
     font-family: "Visuelt Pro", sans-serif;
     text-transform: lowercase;
-    font-size: 1.7em;
+    font-size: 1.8em;
     color: white;
-    margin-left: 0.5em;
-    padding: 30px 0 5px 0;
+    transition: all 0.3s ease;
 }
 
-.footer-contact h1 a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s ease-in-out;
+.cta-contact svg {
+    position: relative;
+    top: 0;
+    margin-left: 8px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
-.footer-contact h1 a:hover {
-    background-color: #e1e1e1;
-    border-radius: 150px;
+#cta-contact:hover:before {
+    width: 100%;
+    border: 0;
+    background: white;
+}
+
+#cta-contact:hover svg {
+    transform: translateX(0);
+    stroke: black;
+}
+
+#cta-contact:hover a {
+    transform: translateX(0);
     color: black;
-    padding: 6px 15px 6px 15px;
+}
+
+.cta-contact:active {
+    transform: scale(0.95);
+    color: black;
+    background: black;
 }
 
 /* scroll on top button */
