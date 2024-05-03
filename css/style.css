@@ -594,7 +594,7 @@ header .name h1:hover {
 #projects .card {
     display: flex;
     width: 100%;
-    height: 200px;
+    height: auto;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
@@ -640,7 +640,7 @@ header .name h1:hover {
 
 #projects img {
     object-fit: cover;
-    width: 40%;
+    width: 600px;
     height: 200px;
 }
 
@@ -1165,11 +1165,11 @@ footer {
     }
 
     #projects .description h4 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     #projects .description p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     #projects .all-projects h2 {
@@ -1306,7 +1306,7 @@ footer {
     }
 
     #projects img {
-        width: 50%;
+        width: 400px;
         height: 200px;
     }
 
@@ -1389,9 +1389,13 @@ footer {
     }
 
     /* projects */
+    #projects .card {
+        max-width: 100%;
+        height: auto;
+    }
+
     #projects img {
-        width: 60%;
-        height: 240px;
+        width: 400px;
     }
 
 
