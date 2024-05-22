@@ -635,12 +635,13 @@ header .name h1:hover {
     transition: 0.3s ease-in-out;
 }
 
-#projects .container .card:nth-child(4),
+#projects .container .card:nth-child(5),
 #projects .container .card:nth-child(5),
 #projects .container .card:nth-child(6),
 #projects .container .card:nth-child(7),
 #projects .container .card:nth-child(8),
-#projects .container .card:nth-child(9) {
+#projects .container .card:nth-child(9),
+#projects .container .card:nth-child(10) {
     height: 100px;
 }
 
@@ -668,6 +669,7 @@ header .name h1:hover {
 }
 
 #projects img {
+    border-radius: 10px;
     object-fit: cover;
     width: 400px;
     height: 200px;
