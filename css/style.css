@@ -23,6 +23,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html body.no-scroll{
